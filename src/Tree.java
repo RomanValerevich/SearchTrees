@@ -65,12 +65,13 @@ public class Tree {
         }
 
         if (left != null) {
-            return right.isNamePyramid();
-        }
-        if (right != null) {
-            return left.isNamePyramid();
+            if (right != null) {
+                return left.isNamePyramid() && right.isNamePyramid();
+            } else {
+                return left.isNamePyramid();
+            }
         } else {
-            return false;
+            return right.isNamePyramid();
         }
 
     }
