@@ -52,6 +52,7 @@ public class Tree {
         if (left == null && right == null) {
             return true;
         }
+
         if (getLeft() != null) {
             if (getName().length() > getLeft().getName().length()) {
                 return false;
@@ -63,15 +64,10 @@ public class Tree {
                 return false;
             }
         }
-
-        if (left != null) {
-            if (right != null) {
-                return left.isNamePyramid() && right.isNamePyramid();
-            } else {
-                return left.isNamePyramid();
-            }
-        } else {
-            return right.isNamePyramid();
+        if (left != null && right != null) {
+            return left.isNamePyramid() && right.isNamePyramid();
+        }else {
+            return false;
         }
 
     }
